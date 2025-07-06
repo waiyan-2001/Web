@@ -1,26 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Automation</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-  <header>
-    <h1>Home Automation With Raspberry Pi</h1>
-  </header>
+  <style>
+  .wrap {
+    width: 1000px;
+    margin: 20px auto;
+    padding-bottom: 1px;
+  }
 
-  <main>
-    <div class="toggle-group"><span>Bulb 1</span><input type="checkbox" class="l"></div>
-    <div class="toggle-group"><span>Bulb 2</span><input type="checkbox" class="l"></div>
-    <div class="toggle-group"><span>Bulb 3</span><input type="checkbox" class="l"></div>
-    <div class="toggle-group"><span>Bulb 4</span><input type="checkbox" class="l"></div>
-    <div class="toggle-group"><span>Bulb 5</span><input type="checkbox" class="l"></div>
-    <div class="toggle-group"><span>Bulb 6</span><input type="checkbox" class="l"></div>
-    <div class="toggle-group"><span>Bulb 7</span><input type="checkbox" class="l"></div>
-    <div class="toggle-group"><span>Bulb 8</span><input type="checkbox" class="l"></div>
-    <div class="toggle-group"><span>Bulb 8</span><input type="checkbox" class="l"></div>
-  </main>
+  .header {
+    height: 160px;
+    background: #e4dddd;
+  }
+  .logoimage {
+    display: inline;
+    height: 120px;
+    width: 120px;
+    padding-left: 0px;
+    padding-top: 0px;
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+  }
+  .logoimage2 {
+
+    height: 120px;
+    width: 130px;
+    margin-top: -60px;
+    margin-right: 20px;
+    float: right;
+  }
+  .logopi {
+    display: inline;
+    height: 60px;
+    width: 50px;
+    padding-left: 0px;
+    padding-top: 0px;
+    margin-left: 380px;
+    margin-top: 20px;
+    float: left;
+  }
+  .logopi2 {
+
+    height: 60px;
+    width: 50px;
+    margin-top: -50px;
+    margin-right: 250px;
+    float: right;
+  }
+  #textcolor {
+    color: #d35400 ;
+    padding-top: 30px;
+    font-size: 25px;
+  }
+</style>
+ </head>
+ <body>
+
+
+<div class="wrap">
+    <img class = "logoimage" src = "logo.png">
+    <div class="header">
+      <h2 id = "textcolor" style="text-align: center;">TECHNOLOGICAL UNIVERSITY (TOUNGOO)</h2>
+      <img class = "logoimage2" src = "major.png">
+      <h2 id = "textcolor" style="text-align: center;">DEPARTMENT OF ELECTRONIC ENGINEERING</h2>
+    </div>  
+  </div>
+    <h2 class="headingOuter" style="font-family: 'PT Sans', sans-serif;"><a>Light 1 Switch</a></h2>
+<div class="toggle toggle--knob">
+  <input type="checkbox" id="toggle--knob" onclick="checking1()" class="toggle--checkbox" checked>
+  <label class="toggle--btn" for="toggle--knob">
+    <span class="toggle--feature" data-label-on="on" data-label-off="off"></span>
+  </label>
+</div>
+<br><br>
+<div class="footer"><center><img class = "logopi" src = "raspberry.png"><h1>Ten Channel Relay Control using Raspberry Pi</h1></center></div>
+
+<script>
+  function checking1() {
+    const checkbox = document.getElementById("toggle--knob");
+    if (checkbox.checked) {
+      document.location = "cgi-bin/light1off.py";
+    } else {
+      document.location = "cgi-bin/light1on.py";
+    }
+  }
+</script>
 </body>
 </html>
